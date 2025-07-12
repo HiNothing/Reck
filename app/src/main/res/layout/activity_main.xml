@@ -1,19 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/transparent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <!-- Material 3 color surface container -->
+    <com.google.android.material.elevation.SurfaceContainer
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/surfaceContainerHigh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Display with Material 3 Text styling -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInput"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="end|bottom"
+                android:text="0"
+                android:textColor="@color/primary"
+                android:textSize="64sp"
+                android:letterSpacing="-0.05"
+                android:padding="16dp"
+                android:textAppearance="@style/TextAppearance.DisplayLarge"
+                app:lineHeight="72sp" />
+
+            <!-- History display -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/onSurfaceVariant"
+                android:textSize="16sp"
+                android:paddingHorizontal="16dp"
+                android:textAppearance="@style/TextAppearance.BodyMedium" />
+
+            <!-- Buttons Grid using Material 3 styles -->
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:columnCount="4"
+                android:rowCount="5"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:padding="8dp"
+                android:rowOrderPreserved="false">
+
+                <!-- Row 1 -->
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonSecondary"
+                    android:text="C" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonSecondary"
+                    android:text="%" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonSecondary"
+                    android:text="⌫" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonPrimary"
+                    android:text="÷" />
+
+                <!-- Row 2 -->
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="7" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="8" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="9" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonPrimary"
+                    android:text="×" />
+
+                <!-- Row 3 -->
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="4" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="5" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="6" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonPrimary"
+                    android:text="-" />
+
+                <!-- Row 4 -->
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="2" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="3" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonPrimary"
+                    android:text="+" />
+
+                <!-- Row 5 -->
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="00" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="0" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonTertiary"
+                    android:text="." />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/CalcButtonAccent"
+                    android:text="=" />
+            </GridLayout>
+        </LinearLayout>
+    </com.google.android.material.elevation.SurfaceContainer>
 </androidx.constraintlayout.widget.ConstraintLayout>
